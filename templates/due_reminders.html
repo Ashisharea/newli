@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html><head><title>Due Reminders</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><h1>Students with Due Date in 7 Days</h1>
+{% if students %}<table><tr><th>ID</th><th>Name</th><th>Due Date</th><th>Status</th></tr>
+{% for s in students %}<tr><td>{{ s.id }}</td><td>{{ s.name }}</td>
+<td>{{ s.due_date }}</td><td>{{ s.discontinue }}</td></tr>{% endfor %}</table>
+{% else %}<p>No upcoming due reminders.</p>{% endif %}
+<a href="{{ url_for('index') }}">Back</a></body></html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Library - All Students</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><h1>Library Management</h1>
+<nav><a href="{{ url_for('add_student') }}">Add Student</a>
+<a href="{{ url_for('search') }}">Search Student</a>
+<a href="{{ url_for('due_reminders') }}">Due Reminders</a></nav>
+<h2>All Students</h2>
+<table><tr><th>ID</th><th>Name</th><th>Father</th><th>Mobile</th><th>Due Date</th><th>Status</th><th>Action</th></tr>
+{% for s in students %}<tr>
+<td>{{ s.id }}</td><td>{{ s.name }}</td><td>{{ s.father_name }}</td>
+<td>{{ s.mobile }}</td><td>{{ s.due_date }}</td><td>{{ s.discontinue }}</td>
+<td><a href="{{ url_for('discontinue', student_id=s.id) }}">Discontinue</a></td>
+</tr>{% endfor %}</table></body></html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><head><title>Add Student</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><h1>Add Student</h1>
+<form method="POST">
+<label>ID: <input type="text" name="id" required></label><br>
+<label>Name: <input type="text" name="name" required></label><br>
+<label>Father's Name: <input type="text" name="father_name" required></label><br>
+<label>Address: <input type="text" name="address" required></label><br>
+<label>Mobile: <input type="text" name="mobile" required></label><br>
+<label>Shift: <input type="text" name="shift"></label><br>
+<label>Joining Date: <input type="date" name="joining_date" required></label><br>
+<label>Preparation: <input type="text" name="preparation"></label><br>
+<label>Seat Number: <input type="text" name="seat_no"></label><br>
+<label>Due Date: <input type="date" name="due_date" required></label><br>
+<input type="submit" value="Add Student"></form>
+<a href="{{ url_for('index') }}">Back</a></body></html>

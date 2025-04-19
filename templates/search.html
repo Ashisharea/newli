@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html><head><title>Search Student</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><h1>Search Student</h1>
+<form method="POST"><label>ID: <input type="text" name="id" required></label>
+<input type="submit" value="Search"></form>
+{% if student %}<h2>Student Details</h2><ul>
+<li>Name: {{ student.name }}</li><li>Father: {{ student.father_name }}</li>
+<li>Mobile: {{ student.mobile }}</li><li>Due Date: {{ student.due_date }}</li>
+<li>Status: {{ student.discontinue }}</li></ul>
+{% elif student is not none %}<p>No student found with that ID.</p>{% endif %}
+<a href="{{ url_for('index') }}">Back</a></body></html>
